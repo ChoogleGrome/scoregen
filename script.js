@@ -38,7 +38,7 @@ while (i < num_names) {
 //     final.push({"name": name[i], "score": score[i]})
 //     console.log("Working Prompt: "+i)
 // }
-~
+
 final.sort(function (a, b) {
     return parseInt(a.points) - parseInt(b.points)
 })
