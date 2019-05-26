@@ -38,14 +38,10 @@ while (i < num_names) {
 //     final.push({"name": name[i], "score": score[i]})
 //     console.log("Working Prompt: "+i)
 // }
-
-console.log(final)
-
+~
 final.sort(function (a, b) {
     return parseInt(a.points) - parseInt(b.points)
 })
-
-console.log(final)
 
 document.write("<H1> Leaderboard: </H1>")
 document.write("<BR>")
