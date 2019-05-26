@@ -5,22 +5,23 @@ var dis_i = 0
 var dis_x = 0
 var num_names = prompt("How many Players (3-5)")
 var i = 0
-var n, x
+var n
+var x
 
 parseInt(num_names)
 
 while (i < num_names) {
     dis = i + 1
-    name[i] = prompt("Player "+dis+" Name")
+    names[i] = prompt("Player "+dis+" Name")
     points[i] = 0
+    console.log("Working Prompt: "+i)
     
-    for (n = 0; n < 10; n + 1) {
+    for (n = 0; n < 10; n = n + 1) {
         points[i] = points[i] + pointGen()
         console.log("Working PointGen: "+n)
     }
 
-    final.push({"name": name[i], "points": points [i]})
-    console.log("Working Prompt: "+i)
+    final.push({"name": names[i], "points": points [i]})
     i = i + 1
 }
 
@@ -41,15 +42,17 @@ while (i < num_names) {
 console.log(final)
 
 final.sort(function (a, b) {
-    return a.score - b.score 
+    return parseInt(a.points) - parseInt(b.points)
 })
+
+console.log(final)
 
 document.write("<H1> Leaderboard: </H1>")
 document.write("<BR>")
 
 for (x = 0; x < final.length; x = x + 1) {
     dis_x = x + 1
-    document.write(dis_x + ". " + final[x].name + " | Points: " + final[x].point)
+    document.write(dis_x + ". " + final[x].name + " | Points: " + final[x].points)
     document.write("<BR>")
 }
 
