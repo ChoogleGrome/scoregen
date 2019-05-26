@@ -1,0 +1,34 @@
+var names = []
+var score = []
+var final = []
+var num_names = prompt("How many Players (3-5")
+var i, n
+
+parseInt(num_names)
+
+for (i = 0; i < num_names; i = i + 1) {
+    name[i] = prompt("Player "+i+" Name")
+    points[i] = 0
+    
+    for (n = 0; n < 10; n + 1) {
+        points[i] = points[i] + pointGen()
+    }
+
+    final.push({"name": name[i], "score": score[i]})
+}
+
+final.score.sort(function (a, b) {
+    return a - b
+})
+
+
+function pointGen() {
+    var rand = Math.random() * 4
+    rand = Math.round(rand + 0.5)
+    
+    if (rand < 1) {
+        rand = 0
+    }
+
+    return rand
+}
